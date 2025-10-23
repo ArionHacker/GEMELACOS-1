@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de GEMELACOS</title>
+   
+</head>
+<link rel="stylesheet" href="index.css">
+<body>
+    <div class="container">
+        <h1>Introducir Nombre de GEMELACOS</h1>
+        
+        <input type="text" id="nombreInput" placeholder="Escribe un nombre aquí...">
+        <button onclick="analizarNombre()">Haz Click</button>
+
+        <div id="resultado">
+            RESULTADO.
+        </div>
+    </div>
+
+    <script>
+        // JAVASCRIPT: LÓGICA (Equivalente al switch de C#)
+        function analizarNombre() {
+            // 1. Obtener el valor del input y normalizarlo (para ignorar mayúsculas/minúsculas)
+            let nombre = document.getElementById("nombreInput").value.trim();
+            let nombreNormalizado = nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase(); // Solo la primera en mayúscula
+
+            let resultadoMensaje;
+
+            // 2. Ejecutar la lógica de comparación
+            switch (nombreNormalizado) {
+                case "Luisda":
+                case "Marco":
+                case "Seva":
+                case "Aaron":
+                    resultadoMensaje = "No pija";
+                    break;
+
+                case "Fernando":
+                case "Juan":
+                case "Jorge":
+                case "Ruben":
+                case "Saul":
+                    resultadoMensaje = "Pija";
+                    break;
+                
+                case "Teolk":
+                    resultadoMensaje = "Es to feo";
+                    break;
+                
+                case "Luis":
+                    resultadoMensaje = "Que vas a pijar tu pipa";
+                    break;
+
+                case "Alex":
+                    resultadoMensaje = "Si pijas (Poli)";
+                    break;
+
+                case "Cesar":
+                    resultadoMensaje = "Si pijas, en Perú";
+                    break;
+                
+                case "Ivan":
+                    resultadoMensaje = "Llegara tu hora lil bro";
+                    break;
+
+                case "Andres":
+                case "Requena":
+                case "Alvaro":
+                    resultadoMensaje = "Pijas bro tranqui";
+                    break;
+
+                case "Asier":
+                    resultadoMensaje = "Prefiero no pijar";
+                    break;
+
+                default:
+                    resultadoMensaje = "Nombre no encontrado en la lista.";
+                    break;
+            }
+
+            // 3. Mostrar el resultado en el div
+            document.getElementById("resultado").textContent = nombre + ": " + resultadoMensaje;
+        }
+    </script>
+</body>
+</html>
